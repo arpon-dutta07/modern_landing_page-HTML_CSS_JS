@@ -872,43 +872,7 @@ html {
     transform: scale(1.08) translateY(-20px);
 }
 
-.pricing-badge {
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: linear-gradient(45deg, #FB773C, #EB3678, #4F1787, #FB773C);
-    background-size: 300% 300%;
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    font-size: 16px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 
-        0 8px 20px rgba(251, 119, 60, 0.4),
-        0 0 0 2px rgba(255, 255, 255, 0.1);
-    animation: badgeGlow 3s ease-in-out infinite, gradientShift 4s ease infinite;
-    z-index: 10;
-    border: 2px solid rgba(255, 255, 255, 0.2);
-}
 
-@keyframes badgeGlow {
-    0%, 100% { 
-        box-shadow: 
-            0 8px 20px rgba(251, 119, 60, 0.4),
-            0 0 0 2px rgba(255, 255, 255, 0.1),
-            0 0 15px rgba(251, 119, 60, 0.3);
-    }
-    50% { 
-        box-shadow: 
-            0 12px 30px rgba(251, 119, 60, 0.6),
-            0 0 0 3px rgba(255, 255, 255, 0.2),
-            0 0 25px rgba(251, 119, 60, 0.5);
-        transform: translateX(-50%) scale(1.05);
-    }
-}
 
 .pricing-header h3 {
     font-size: 28px;
@@ -2189,17 +2153,20 @@ html {
     .pricing-grid {
         flex-direction: column;
         align-items: center;
-        gap: 20px;
+        gap: 25px;
+        padding: 0 20px;
     }
 
     .pricing-card {
-        max-width: 400px;
+        max-width: 450px;
         width: 100%;
+        min-width: auto;
     }
 
     .pricing-card.featured {
         transform: scale(1.02);
-        order: -1;
+        order: 0;
+        margin: 10px 0;
     }
 
     .steps-container {
@@ -2348,8 +2315,12 @@ html {
   .pricing-section,
   .how-to-use-section,
   .roadmap-section {
-    padding: 60px 0;
+    padding: 50px 0;
     min-height: auto;
+  }
+
+  .pricing-section {
+    padding: 60px 0;
   }
 
   .section-container {
@@ -2385,23 +2356,72 @@ html {
   .pricing-grid {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: 25px;
+    padding: 0 10px;
   }
 
   .pricing-card {
-    padding: 30px 20px;
+    padding: 25px 20px;
     max-width: 100%;
     width: 100%;
+    min-width: auto;
+    margin: 0;
+    transform: none !important;
   }
 
   .pricing-card.featured {
-    transform: none;
-    margin: 10px 0;
-    order: -1;
+    transform: none !important;
+    margin: 0;
+    order: 0;
+    background: linear-gradient(135deg, 
+        rgba(251, 119, 60, 0.15), 
+        rgba(235, 54, 120, 0.12), 
+        rgba(79, 23, 135, 0.1));
+    border: 2px solid rgba(251, 119, 60, 0.3);
+  }
+
+  .pricing-card:hover {
+    transform: none !important;
+  }
+
+  .pricing-card.featured:hover {
+    transform: none !important;
   }
 
   .amount {
     font-size: 36px;
+  }
+
+  .pricing-header h3 {
+    font-size: 24px;
+  }
+
+  .pricing-features {
+    margin: 20px 0;
+  }
+
+  .pricing-features li {
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .pricing-btn {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  /* Disable complex animations on mobile for better performance */
+  .pricing-card::before,
+  .pricing-card::after {
+    display: none;
+  }
+
+  .pricing-card.featured {
+    animation: none;
+  }
+
+  .pricing-section::before {
+    animation-duration: 15s;
   }
 
   .steps-container {
