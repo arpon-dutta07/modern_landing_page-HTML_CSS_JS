@@ -568,18 +568,50 @@ html {
 }
 
 .feature-card {
-    background: linear-gradient(135deg, rgba(251, 119, 60, 0.1), rgba(235, 54, 120, 0.1));
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: linear-gradient(135deg, 
+        rgba(251, 119, 60, 0.12), 
+        rgba(235, 54, 120, 0.1), 
+        rgba(79, 23, 135, 0.08), 
+        rgba(82, 34, 88, 0.06));
+    border: 2px solid transparent;
+    background-clip: padding-box;
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
     transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(15px);
     position: relative;
     overflow: hidden;
     opacity: 0;
     transform: translateY(50px) scale(0.9);
     animation: featureCardFloat 6s ease-in-out infinite;
+}
+
+.feature-card::after {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, 
+        #FB773C, #EB3678, #4F1787, #522258, #180161, #FB773C);
+    background-size: 400% 400%;
+    border-radius: 20px;
+    z-index: -1;
+    animation: heroFeatureBorder 8s ease-in-out infinite;
+    opacity: 0.2;
+}
+
+@keyframes heroFeatureBorder {
+    0%, 100% { 
+        background-position: 0% 50%;
+        opacity: 0.2;
+    }
+    50% { 
+        background-position: 100% 50%;
+        opacity: 0.4;
+    }
 }
 
 .feature-card::before {
@@ -801,11 +833,17 @@ html {
 .pricing-card.featured {
     border-color: #FB773C;
     transform: scale(1.05) translateY(-10px);
-    background: linear-gradient(135deg, rgba(251, 119, 60, 0.15), rgba(235, 54, 120, 0.15));
+    background: linear-gradient(135deg, 
+        rgba(251, 119, 60, 0.18), 
+        rgba(235, 54, 120, 0.15), 
+        rgba(79, 23, 135, 0.12), 
+        rgba(82, 34, 88, 0.1));
     box-shadow: 
-        0 20px 40px rgba(251, 119, 60, 0.3),
-        0 0 0 1px rgba(251, 119, 60, 0.2);
-    animation: featuredGlow 3s ease-in-out infinite;
+        0 25px 50px rgba(251, 119, 60, 0.4),
+        0 10px 30px rgba(235, 54, 120, 0.3),
+        0 5px 20px rgba(79, 23, 135, 0.2),
+        0 0 0 2px rgba(251, 119, 60, 0.3);
+    animation: heroFeaturedGlow 4s ease-in-out infinite;
 }
 
 @keyframes featuredGlow {
