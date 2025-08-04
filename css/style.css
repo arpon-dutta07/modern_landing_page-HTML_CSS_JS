@@ -2333,7 +2333,11 @@ html {
   .how-to-use-section h2,
   .roadmap-section h2 {
     font-size: 28px;
-    margin-bottom: 30px;
+    margin-bottom: 25px;
+  }
+
+  .pricing-section h2 {
+    margin-bottom: 20px;
   }
 
   .features-grid {
@@ -2356,28 +2360,33 @@ html {
   .pricing-grid {
     flex-direction: column;
     align-items: center;
-    gap: 25px;
-    padding: 0 10px;
+    gap: 20px;
+    padding: 0 15px;
+    margin-top: 40px;
   }
 
   .pricing-card {
-    padding: 25px 20px;
-    max-width: 100%;
-    width: 100%;
+    padding: 20px 15px;
+    max-width: 320px;
+    width: 90%;
     min-width: auto;
-    margin: 0;
+    margin: 0 auto;
     transform: none !important;
+    border-radius: 15px;
   }
 
   .pricing-card.featured {
     transform: none !important;
-    margin: 0;
+    margin: 0 auto;
     order: 0;
     background: linear-gradient(135deg, 
         rgba(251, 119, 60, 0.15), 
         rgba(235, 54, 120, 0.12), 
         rgba(79, 23, 135, 0.1));
-    border: 2px solid rgba(251, 119, 60, 0.3);
+    border: 2px solid rgba(251, 119, 60, 0.4);
+    box-shadow: 
+        0 8px 25px rgba(251, 119, 60, 0.2),
+        0 4px 15px rgba(235, 54, 120, 0.1);
   }
 
   .pricing-card:hover {
@@ -2393,21 +2402,42 @@ html {
   }
 
   .pricing-header h3 {
-    font-size: 24px;
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .price {
+    margin-bottom: 15px;
+  }
+
+  .amount {
+    font-size: 32px !important;
+  }
+
+  .currency, .period {
+    font-size: 14px;
   }
 
   .pricing-features {
-    margin: 20px 0;
+    margin: 15px 0;
   }
 
   .pricing-features li {
+    font-size: 13px;
+    padding: 6px 0;
+    line-height: 1.4;
+  }
+
+  .pricing-features li i {
     font-size: 14px;
-    padding: 8px 0;
+    margin-right: 8px;
   }
 
   .pricing-btn {
-    padding: 12px;
+    padding: 10px 20px;
     font-size: 14px;
+    margin-top: 15px;
+    border-radius: 8px;
   }
 
   /* Disable complex animations on mobile for better performance */
